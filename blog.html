@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juan Moreno – Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+  <script>
+    function filterPosts() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const posts = document.querySelectorAll('[data-tags]');
+      posts.forEach(post => {
+        const tags = post.dataset.tags.toLowerCase();
+        const text = post.innerText.toLowerCase();
+        post.style.display = (tags.includes(query) || text.includes(query)) ? '' : 'none';
+      });
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-10 mb-10">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-3xl font-bold">📝 Juan Moreno – Blog</h1>
+      <p class="mt-2 text-lg">Insights on cloud architecture, quantum security, and building for scale.</p>
+      <p class="text-sm mt-1"><a href="index.html" class="underline">← Back to portfolio</a></p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 space-y-12">
+    <div class="mb-8">
+      <input id="searchInput" oninput="filterPosts()" type="text" placeholder="Search topics or keywords..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400" />
+    </div>
+
+    <article data-tags="quantum networking qkd monitoring">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Monitoring a Quantum Network on AWS</h2>
+      <p class="text-sm text-gray-600 mb-2">Published Apr 2024 · <a href="https://aws.amazon.com/blogs/quantum-computing/monitoring-a-quantum-network-on-aws/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+      <p class="text-xs text-gray-500 mb-2">Tags: quantum, networking, monitoring</p>
+      <p class="text-gray-700">How we integrated QKD telemetry into AWS-native monitoring tools, enabling visibility into quantum-secured network links in real time. Built for reliability, security, and operational readiness.</p>
+    </article>
+
+    <article data-tags="qkd pqc metro deployment hybrid security">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Implementing a Quantum-Secured Network in a Metro Area</h2>
+      <p class="text-sm text-gray-600 mb-2">Published Sep 2023 · <a href="https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+      <p class="text-xs text-gray-500 mb-2">Tags: quantum, metro, hybrid security, telco</p>
+      <p class="text-gray-700">Design and deployment of a hybrid QKD-PQC architecture over real fiber infrastructure. A joint effort between cloud and telco to secure urban infrastructure in the post-quantum era.</p>
+    </article>
+
+    <article data-tags="braket cost optimization quantum cloud">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Managing the Cost of Your Experiments in Amazon Braket</h2>
+      <p class="text-sm text-gray-600 mb-2">Published Nov 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+      <p class="text-xs text-gray-500 mb-2">Tags: braket, quantum, cost optimization</p>
+      <p class="text-gray-700">How to monitor, forecast, and optimize costs when running quantum computing experiments using simulators, hybrid jobs, and QPUs in Amazon Braket.</p>
+    </article>
+
+    <article data-tags="quantum noise error simulation modeling">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Noise in Quantum Computing</h2>
+      <p class="text-sm text-gray-600 mb-2">Published Mar 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/noise-in-quantum-computing/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+      <p class="text-xs text-gray-500 mb-2">Tags: quantum, noise, simulation</p>
+      <p class="text-gray-700">An accessible guide to the sources of noise in quantum systems, how they impact computation, and how simulation helps us better understand and mitigate these effects.</p>
+    </article>
+  </main>
+
+  <footer class="bg-gray-100 text-sm text-gray-700 py-6 mt-12 border-t">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
