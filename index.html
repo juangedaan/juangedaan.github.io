@@ -12,32 +12,29 @@
   </style>
 </head>
 <body class="bg-white text-gray-900">
-  <!-- Intro Section -->
   <header class="bg-blue-50 py-12 mb-12 shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+    <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
       <div class="md:col-span-2">
         <h1 class="text-4xl font-bold text-gray-800">Juan Moreno</h1>
-        <h2 class="text-lg text-gray-600 mt-1 font-medium">Cloud Infrastructure Leader</h2>
-        <p class="text-gray-700 mt-4 max-w-xl">With extensive experience at <strong>AWS</strong>, I specialize in architecting scalable, resilient cloud solutions. Passionate about distributed systems. I actively share my insights to empower tech communities.</p>
-        <a href="blog.html" class="mt-6 inline-block bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded hover:bg-blue-700 transition">View Blog</a>
+        <h2 class="text-base text-gray-600 mt-1 font-medium">Cloud Infrastructure Architect</h2>
+        <p class="text-sm text-gray-700 mt-4 max-w-xl">With extensive experience at <strong>AWS</strong>, I specialize in architecting scalable, resilient cloud solutions. Passionate about distributed systems. I actively share my insights to empower tech communities.</p>
+        <a href="blog.html" class="mt-6 inline-block bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded hover:bg-blue-700 transition">View Blog</a>
       </div>
       <div class="flex justify-center md:justify-end">
-        <img src="juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-32 h-32 rounded-full shadow-lg border-4 border-white">
+        <img src="juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-48 h-48 rounded-full shadow-lg border-4 border-white">
       </div>
     </div>
   </header>
 
-  <!-- Projects Section -->
-  <main class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-semibold mb-6">My Projects</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Each project card wrapped in an anchor -->
+  <main class="max-w-4xl mx-auto px-6">
+    <h2 class="text-xl font-semibold mb-6 text-center">My Projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
       <a href="https://github.com/juangedaan/cloud-security-governance-checks" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/governance.png" alt="cloud-security-governance-checks" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-blue-700">cloud-security-governance-</h3>
-          <p class="text-sm text-gray-600 mt-2">A cloud security governance au_tool.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/governance.png" alt="cloud-security-governance-checks" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-blue-700">cloud-security-governance-checks</h3>
+          <p class="text-xs text-gray-600 mt-1">CDK-based AWS Config rules for multi-account security governance.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
           </div>
@@ -45,11 +42,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/edge-ai-inference-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/edge.png" alt="edge-ai-inference-pipeline" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-green-700">edge-ai-inference-pipeline</h3>
-          <p class="text-sm text-gray-600 mt-2">Cloud-based pipeline for edge AI.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/edge.png" alt="edge-ai-inference-pipeline" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-green-700">edge-ai-inference-pipeline</h3>
+          <p class="text-xs text-gray-600 mt-1">Cloud-based ML inference pipeline for edge devices using Docker and Greengrass.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">ML</span>
@@ -58,11 +55,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/genai-code-review-assistant" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/genai.png" alt="genai-code-review-assistant" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-red-700">genai-code-review-assistant</h3>
-          <p class="text-sm text-gray-600 mt-2">Code review agent using LLMs.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/genai.png" alt="genai-code-review-assistant" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-red-700">genai-code-review-assistant</h3>
+          <p class="text-xs text-gray-600 mt-1">GitHub Action bot using GPT to review pull requests.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">LangChain</span>
           </div>
@@ -70,11 +67,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/hybrid-security-dkd-pqe" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/qkd.png" alt="hybrid-security-dkd-pqe" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-pink-700">hybrid-security-dkd-pqe</h3>
-          <p class="text-sm text-gray-600 mt-2">Simulated hybrid encryption using QKD – PQC with AES.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/qkd.png" alt="hybrid-security-dkd-pqe" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-pink-700">hybrid-security-dkd-pqe</h3>
+          <p class="text-xs text-gray-600 mt-1">Simulated hybrid encryption using QKD + PQC with AES.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">QKD_PQC</span>
           </div>
@@ -82,11 +79,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/iac-patterns-with-cdk" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/cdk.png" alt="iac-patterns-with-cdk" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-green-700">iac-patterns-with-cdk</h3>
-          <p class="text-sm text-gray-600 mt-2">Reusable AWS CDK stacks for VPC, ECS, IAM, and secrets management.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/cdk.png" alt="iac-patterns-with-cdk" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-green-700">iac-patterns-with-cdk</h3>
+          <p class="text-xs text-gray-600 mt-1">Reusable AWS CDK stacks for VPC, ECS, IAM, and secrets management.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">CDK</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">TypeScript</span>
           </div>
@@ -94,11 +91,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/multi-region-website,depiora" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/site.png" alt="multi-region-website,depiora" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-yellow-700">multi-region-website,depiora</h3>
-          <p class="text-sm text-gray-600 mt-2">Multi-region trebsites.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/site.png" alt="multi-region-website,depiora" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-yellow-700">multi-region-website,depiora</h3>
+          <p class="text-xs text-gray-600 mt-1">Fault-tolerant static site with S3, CloudFront, and Route 53 failover.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">S3</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Route 53</span>
@@ -107,11 +104,11 @@
       </a>
 
       <a href="https://github.com/juangedaan/serverless-data-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
-        <img src="images/pipeline.png" alt="serverless-data-pipeline" class="w-full h-32 object-cover">
-        <div class="p-5">
-          <h3 class="text-xl font-semibold text-indigo-700">serverless-data-pipeline</h3>
-          <p class="text-sm text-gray-600 mt-2">Serverless pipeline.</p>
-          <div class="flex gap-2 mt-3 text-xs">
+        <img src="images/pipeline.png" alt="serverless-data-pipeline" class="w-full h-28 object-cover">
+        <div class="p-4">
+          <h3 class="text-base font-semibold text-indigo-700">serverless-data-pipeline</h3>
+          <p class="text-xs text-gray-600 mt-1">Real-time data pipeline using Kinesis, Lambda, and DynamoDB.</p>
+          <div class="flex gap-2 mt-2 text-xs">
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
             <span class="bg-gray-100 px-2 py-1 rounded font-medium">Serverless</span>
           </div>
@@ -120,8 +117,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-100 text-sm text-gray-700 py-6 mt-12 border-t">
+  <footer class="bg-gray-100 text-xs text-gray-700 py-6 mt-12 border-t">
     <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
       <p>📄 View Resume in:</p>
       <div class="space-x-4">
