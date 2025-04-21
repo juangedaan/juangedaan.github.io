@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Moreno – Blog</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -21,53 +22,115 @@
     }
   </script>
 </head>
-<body class="bg-white text-gray-900">
-  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-10 mb-10">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-3xl font-bold">📝 Juan Moreno – Blog</h1>
-      <p class="mt-2 text-lg">Insights on cloud architecture, quantum security, and building for scale.</p>
-      <p class="text-sm mt-1"><a href="index.html" class="underline">← Back to portfolio</a></p>
-    </div>
-  </header>
+<body class="bg-white text-gray-900 flex justify-center">
+  <div class="w-[66%] bg-white shadow-lg rounded-xl overflow-hidden">
 
-  <main class="max-w-4xl mx-auto px-6 space-y-12">
-    <div class="mb-8">
-      <input id="searchInput" oninput="filterPosts()" type="text" placeholder="Search topics or keywords..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400" />
-    </div>
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12 mb-12 shadow-sm">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl font-bold">📝 Juan Moreno – Blog</h1>
+        <p class="mt-2 text-lg">Insights on cloud architecture, quantum security, and building for scale.</p>
+        <p class="text-sm mt-1"><a href="index.html" class="underline">← Back to portfolio</a></p>
+      </div>
+    </header>
 
-    <article data-tags="quantum networking qkd monitoring">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Monitoring a Quantum Network on AWS</h2>
-      <p class="text-sm text-gray-600 mb-2">Published Apr 2024 · <a href="https://aws.amazon.com/blogs/quantum-computing/monitoring-a-quantum-network-on-aws/" class="text-blue-600 underline">Read on AWS Blog</a></p>
-      <p class="text-xs text-gray-500 mb-2">Tags: quantum, networking, monitoring</p>
-      <p class="text-gray-700">How we integrated QKD telemetry into AWS-native monitoring tools, enabling visibility into quantum-secured network links in real time. Built for reliability, security, and operational readiness.</p>
-    </article>
+    <main class="max-w-4xl mx-auto px-6 space-y-12">
+      <div class="mb-8">
+        <input id="searchInput" oninput="filterPosts()" type="text" placeholder="Search topics or keywords..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400" />
+      </div>
 
-    <article data-tags="qkd pqc metro deployment hybrid security">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Implementing a Quantum-Secured Network in a Metro Area</h2>
-      <p class="text-sm text-gray-600 mb-2">Published Sep 2023 · <a href="https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/" class="text-blue-600 underline">Read on AWS Blog</a></p>
-      <p class="text-xs text-gray-500 mb-2">Tags: quantum, metro, hybrid security, telco</p>
-      <p class="text-gray-700">Design and deployment of a hybrid QKD-PQC architecture over real fiber infrastructure. A joint effort between cloud and telco to secure urban infrastructure in the post-quantum era.</p>
-    </article>
+      <!-- Original Blog Entries -->
+      <article data-tags="quantum networking qkd monitoring">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Monitoring a Quantum Network on AWS</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Apr 2024 · <a href="https://aws.amazon.com/blogs/quantum-computing/monitoring-a-quantum-network-on-aws/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum, networking, monitoring</p>
+        <p class="text-gray-700">How we integrated QKD telemetry into AWS-native monitoring tools, enabling visibility into quantum-secured network links in real time. Built for reliability, security, and operational readiness.</p>
+      </article>
 
-    <article data-tags="braket cost optimization quantum cloud">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Managing the Cost of Your Experiments in Amazon Braket</h2>
-      <p class="text-sm text-gray-600 mb-2">Published Nov 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-blue-600 underline">Read on AWS Blog</a></p>
-      <p class="text-xs text-gray-500 mb-2">Tags: braket, quantum, cost optimization</p>
-      <p class="text-gray-700">How to monitor, forecast, and optimize costs when running quantum computing experiments using simulators, hybrid jobs, and QPUs in Amazon Braket.</p>
-    </article>
+      <article data-tags="qkd pqc metro deployment hybrid security">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Implementing a Quantum-Secured Network in a Metro Area</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Sep 2023 · <a href="https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum, metro, hybrid security, telco</p>
+        <p class="text-gray-700">Design and deployment of a hybrid QKD-PQC architecture over real fiber infrastructure. A joint effort between cloud and telco to secure urban infrastructure in the post-quantum era.</p>
+      </article>
 
-    <article data-tags="quantum noise error simulation modeling">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-2">Noise in Quantum Computing</h2>
-      <p class="text-sm text-gray-600 mb-2">Published Mar 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/noise-in-quantum-computing/" class="text-blue-600 underline">Read on AWS Blog</a></p>
-      <p class="text-xs text-gray-500 mb-2">Tags: quantum, noise, simulation</p>
-      <p class="text-gray-700">An accessible guide to the sources of noise in quantum systems, how they impact computation, and how simulation helps us better understand and mitigate these effects.</p>
-    </article>
-  </main>
+      <article data-tags="braket cost optimization quantum cloud">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Managing the Cost of Your Experiments in Amazon Braket</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Nov 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: braket, quantum, cost optimization</p>
+        <p class="text-gray-700">How to monitor, forecast, and optimize costs when running quantum computing experiments using simulators, hybrid jobs, and QPUs in Amazon Braket.</p>
+      </article>
 
-  <footer class="bg-gray-100 text-sm text-gray-700 py-6 mt-12 border-t">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
-    </div>
-  </footer>
+      <article data-tags="quantum noise error simulation modeling">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Noise in Quantum Computing</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Mar 2022 · <a href="https://aws.amazon.com/blogs/quantum-computing/noise-in-quantum-computing/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum, noise, simulation</p>
+        <p class="text-gray-700">An accessible guide to the sources of noise in quantum systems, how they impact computation, and how simulation helps us better understand and mitigate these effects.</p>
+      </article>
+
+      <!-- Newly Added Blog Entries -->
+      <article data-tags="aws braket dev environment">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Setting up a Cross-Region Private Environment in Amazon Braket</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Apr 2024 · <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-a-cross-region-private-environment-in-amazon-braket/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: braket, networking, vpc, cross-region</p>
+        <p class="text-gray-700">Configure isolated and secure environments across AWS regions for advanced quantum computing workloads on Amazon Braket.</p>
+      </article>
+
+      <article data-tags="aws braket local dev environment">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Setting up Your Local Development Environment in Amazon Braket</h2>
+        <p class="text-sm text-gray-600 mb-2">Published Apr 2024 · <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-your-local-development-environment-in-amazon-braket/" class="text-blue-600 underline">Read on AWS Blog</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: braket, jupyter, local dev</p>
+        <p class="text-gray-700">Best practices to prepare a productive local setup to code, test, and run hybrid quantum workloads using Braket SDK.</p>
+      </article>
+
+      <article data-tags="quantum money cryptography blockchain">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Quantum Money</h2>
+        <p class="text-sm text-gray-600 mb-2">Published on Medium · <a href="https://medium.com/@quantumguru/quantum-money-fcfa26966abe" class="text-blue-600 underline">Read on Medium</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum, money, cryptography</p>
+        <p class="text-gray-700">Exploring the concept of unforgeable quantum money based on the no-cloning theorem and its potential future use cases.</p>
+      </article>
+
+      <article data-tags="quantum biology bacterium">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">The Quantum Bacterium</h2>
+        <p class="text-sm text-gray-600 mb-2">Published on Medium · <a href="https://medium.com/@quantumguru/the-quantum-bacterium-aa428818536d" class="text-blue-600 underline">Read on Medium</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum, biology</p>
+        <p class="text-gray-700">A reflection on what it would mean for bacteria to possess quantum-like properties and what that says about life itself.</p>
+      </article>
+
+      <article data-tags="optical fiber loss quantum networking">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">Unraveling the Mysteries of Light: Optical Fiber Losses in Quantum Networks</h2>
+        <p class="text-sm text-gray-600 mb-2">Published on Medium · <a href="https://medium.com/@quantumguru/unraveling-the-mysteries-of-light-optical-fiber-losses-in-quantum-networks-fc7779744420" class="text-blue-600 underline">Read on Medium</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: fiber optics, quantum networking</p>
+        <p class="text-gray-700">Understand the causes of optical losses in fiber and their implications on quantum key distribution performance.</p>
+      </article>
+
+      <article data-tags="china quantum race geopolitics">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">China Gets Ahead in the Quantum Race</h2>
+        <p class="text-sm text-gray-600 mb-2">Published on Medium · <a href="https://medium.com/@quantumguru/china-gets-ahead-in-the-quantum-race-c1bde0864379" class="text-blue-600 underline">Read on Medium</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: china, quantum, geopolitics</p>
+        <p class="text-gray-700">A look at China’s progress in building quantum infrastructure and what it means for global technology leadership.</p>
+      </article>
+
+      <article data-tags="quantum computing architecture design">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-2">7 Designs for a Universal Quantum Computer</h2>
+        <p class="text-sm text-gray-600 mb-2">Published on Medium · <a href="https://medium.com/swlh/7-designs-for-a-universal-quantum-computer-d918e556d149" class="text-blue-600 underline">Read on Medium</a></p>
+        <p class="text-xs text-gray-500 mb-2">Tags: quantum computing, architecture</p>
+        <p class="text-gray-700">Survey of current architectures vying to become the standard for building scalable quantum computers.</p>
+      </article>
+    </main>
+
+    <footer class="bg-gray-100 text-xs text-gray-700 py-6 mt-12 border-t">
+      <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
+        <p>📄 View Resume in:</p>
+        <div class="space-x-4">
+          <a href="resume.html" class="text-blue-600 hover:underline">🇬🇧 English</a>
+          <a href="resume-zh.html" class="text-blue-600 hover:underline">🇨🇳 中文</a>
+          <a href="resume-es.html" class="text-blue-600 hover:underline">🇪🇸 Español</a>
+        </div>
+        <hr class="my-4 border-gray-300 max-w-xs mx-auto">
+        <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
+      </div>
+    </footer>
+
+  </div>
 </body>
 </html>
