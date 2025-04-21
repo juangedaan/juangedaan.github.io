@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Juan Moreno – Blog</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -21,6 +21,10 @@
         post.style.display = (tags.includes(query) || text.includes(query)) ? '' : 'none';
       });
     }
+    function filterByTag(tag) {
+      document.getElementById('searchInput').value = tag;
+      filterPosts();
+    }
   </script>
 </head>
 <body class="bg-white text-gray-900 flex justify-center">
@@ -30,117 +34,132 @@
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h1 class="text-4xl font-bold text-gray-800">📝 Juan Moreno – Blog</h1>
         <p class="mt-2 text-lg text-gray-600">Insights on cloud architecture, quantum security, and building for scale.</p>
-        <p class="text-sm mt-1"><a href="index.html" class="text-blue-600 hover:underline">← Back to portfolio</a></p>
+        <p class="text-sm mt-1"><a href="index.html" class="text-blue-600 hover:underline">&larr; Back to portfolio</a></p>
       </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-6">
       <div class="mb-8">
-        <input id="searchInput" oninput="filterPosts()" type="text" placeholder="Search topics or keywords..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400" />
+        <input id="searchInput" oninput="filterPosts()" type="text" placeholder="Search topics or keywords..." class="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring focus:border-blue-400">
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Blog Tiles -->
-        <article data-tags="quantum networking qkd monitoring" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-monitor.png" alt="Monitoring a Quantum Network on AWS" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Monitoring a Quantum Network on AWS</h2>
-            <p class="text-xs text-gray-600 mt-1">QKD telemetry into AWS-native monitoring tools.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/monitoring-a-quantum-network-on-aws/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="qkd pqc metro deployment hybrid security" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-nqsn.jpg" alt="Quantum Secured Network" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Implementing a Quantum-Secured Network</h2>
-            <p class="text-xs text-gray-600 mt-1">Hybrid QKD-PQC architecture over metro fiber.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="braket cost optimization quantum cloud" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-cost.jpg" alt="Braket Cost Optimization" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Managing Braket Experiment Costs</h2>
-            <p class="text-xs text-gray-600 mt-1">Track and optimize quantum experiment spend.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="quantum noise error simulation modeling" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-noise.jpg" alt="Noise in Quantum Computing" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Noise in Quantum Computing</h2>
-            <p class="text-xs text-gray-600 mt-1">Impact of quantum noise and how we simulate it.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/noise-in-quantum-computing/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="aws braket dev environment" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-intregion.jpg" alt="Cross Region Braket Environment" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Cross-Region Setup in Braket</h2>
-            <p class="text-xs text-gray-600 mt-1">Private multi-region quantum environments.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-a-cross-region-private-environment-in-amazon-braket/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="aws braket local dev environment" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-setup.png" alt="Local Setup for Braket" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Local Development with Braket</h2>
-            <p class="text-xs text-gray-600 mt-1">Set up your dev environment for quantum coding.</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-your-local-development-environment-in-amazon-braket/" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="quantum money cryptography blockchain" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-money.webp" alt="Quantum Money" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Quantum Money</h2>
-            <p class="text-xs text-gray-600 mt-1">Exploring unforgeable money built on quantum physics.</p>
-            <a href="https://medium.com/@quantumguru/quantum-money-fcfa26966abe" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="quantum biology bacterium" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-bacterium.webp" alt="Quantum Bacterium" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">The Quantum Bacterium</h2>
-            <p class="text-xs text-gray-600 mt-1">Life, evolution, and quantum information.</p>
-            <a href="https://medium.com/@quantumguru/the-quantum-bacterium-aa428818536d" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="optical fiber loss quantum networking" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-losses.webp" alt="Optical Fiber Losses" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">Fiber Losses in Quantum Networks</h2>
-            <p class="text-xs text-gray-600 mt-1">How optical losses limit quantum communications.</p>
-            <a href="https://medium.com/@quantumguru/unraveling-the-mysteries-of-light-optical-fiber-losses-in-quantum-networks-fc7779744420" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="china quantum race geopolitics" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-china.webp" alt="China Quantum Race" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">China in the Quantum Race</h2>
-            <p class="text-xs text-gray-600 mt-1">China’s strategy and rise in global quantum leadership.</p>
-            <a href="https://medium.com/@quantumguru/china-gets-ahead-in-the-quantum-race-c1bde0864379" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="quantum computing architecture design" class="bg-white border rounded-lg shadow hover:shadow-md transition square overflow-hidden flex flex-col">
-          <img src="images/blog-designs.webp" alt="Universal Quantum Designs" class="w-full h-1/2 object-cover">
-          <div class="p-4 flex flex-col justify-between h-1/2">
-            <h2 class="text-base font-semibold text-blue-700">7 Designs for a Quantum Computer</h2>
-            <p class="text-xs text-gray-600 mt-1">Architectural approaches for universal quantum computers.</p>
-            <a href="https://medium.com/swlh/7-designs-for-a-universal-quantum-computer-d918e556d149" class="text-xs text-blue-600 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
+      <div class="mb-10 flex flex-wrap gap-2 text-sm">
+        <button onclick="filterByTag('quantum')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#quantum</button>
+        <button onclick="filterByTag('braket')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#braket</button>
+        <button onclick="filterByTag('networking')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#networking</button>
+        <button onclick="filterByTag('pqc')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#pqc</button>
+        <button onclick="filterByTag('security')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#security</button>
+        <button onclick="filterByTag('geopolitics')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#geopolitics</button>
+        <button onclick="filterByTag('biology')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#biology</button>
+        <button onclick="filterByTag('architecture')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#architecture</button>
+        <button onclick="filterByTag('cost')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#cost</button>
+        <button onclick="filterByTag('simulation')" class="bg-gray-200 hover:bg-blue-200 px-3 py-1 rounded">#simulation</button>
       </div>
-    </main>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="blogContainer">
+
+        <article data-tags="quantum networking qkd monitoring" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-monitor.png" alt="Monitoring a Quantum Network on AWS" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-700">Integrating Quantum Telemetry into AWS Monitoring Systems</h2>
+            <p class="text-sm text-gray-600 mt-2">As quantum-secured networks become more prevalent, ensuring operational visibility is essential. This post walks through how telemetry from quantum key distribution (QKD) systems can be surfaced using native AWS monitoring tools like CloudWatch and EventBridge, creating a seamless observability experience for quantum infrastructure operators.</p>
+            <p class="text-xs text-gray-500 mt-2">#quantum #networking #monitoring</p>
+            <a href="https://aws.amazon.com/blogs/quantum-computing/monitoring-a-quantum-network-on-aws/" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article data-tags="braket cost optimization quantum cloud" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-cost.jpg" alt="Managing Braket Experiment Costs" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-700">Cost Control Strategies for Quantum Computing with Amazon Braket</h2>
+            <p class="text-sm text-gray-600 mt-2">Quantum computing on AWS brings unprecedented flexibility—but also complexity in billing. Learn how to understand and manage the cost of experiments using tools like billing alerts, consolidated usage dashboards, and best practices for simulator and QPU usage that align with budget-conscious research and development goals.</p>
+            <p class="text-xs text-gray-500 mt-2">#braket #cost #optimization</p>
+            <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article data-tags="aws braket local dev environment" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-setup.png" alt="Local Setup for Braket" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-700">Setting Up a Local Quantum Development Environment</h2>
+            <p class="text-sm text-gray-600 mt-2">For researchers and developers working on quantum applications, having a reproducible local setup is critical. This post outlines a step-by-step guide to configuring Amazon Braket SDK locally with Python, Docker, and Jupyter, enabling simulation workflows before moving to the cloud for scaled runs.</p>
+            <p class="text-xs text-gray-500 mt-2">#braket #development #local</p>
+            <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-your-local-development-environment-in-amazon-braket/" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article data-tags="china quantum race geopolitics" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-china.webp" alt="China Quantum Race" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-700">How China’s Strategic Investments Are Shaping the Quantum Frontier</h2>
+            <p class="text-sm text-gray-600 mt-2">China is making headlines by leading in large-scale quantum deployments. From satellite-enabled QKD to regional fiber-secured networks, this article analyzes China’s approach, funding priorities, and what the global tech community should understand about the country’s long-term goals in the quantum arms race.</p>
+            <p class="text-xs text-gray-500 mt-2">#quantum #china #geopolitics</p>
+            <a href="https://medium.com/@quantumguru/china-gets-ahead-in-the-quantum-race-c1bde0864379" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+        <!-- Blog entries will be generated dynamically or inserted below -->
+      <article data-tags="qkd pqc metro deployment hybrid security" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-nqsn.jpg" alt="Quantum Secured Network" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">Deploying Quantum-Secured Metro Networks Using Hybrid Cryptography</h2>
+    <p class="text-sm text-gray-600 mt-2">Explore how hybrid cryptographic models are being deployed in real metropolitan fiber networks to secure data from evolving threats. This case study highlights how QKD and PQC are combined to protect mission-critical links in telecom and public sector settings.</p>
+    <p class="text-xs text-gray-500 mt-2">#qkd #pqc #metro #deployment</p>
+    <a href="https://aws.amazon.com/blogs/quantum-computing/implementing-a-quantum-secured-network-in-a-metropolitan-area/" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+<article data-tags="aws braket dev environment" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-intregion.jpg" alt="Cross Region Braket Environment" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">Building Cross-Region Quantum Workloads on AWS</h2>
+    <p class="text-sm text-gray-600 mt-2">Organizations operating in regulated environments may require strict network isolation and data residency controls. This post introduces a pattern for building cross-region private Braket environments using VPC peering and secure routing to isolate experiments across AWS regions.</p>
+    <p class="text-xs text-gray-500 mt-2">#braket #networking #vpc #multi-region</p>
+    <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-a-cross-region-private-environment-in-amazon-braket/" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+<article data-tags="quantum money cryptography blockchain" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-money.webp" alt="Quantum Money" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">Quantum Money: The Future of Unforgeable Currency</h2>
+    <p class="text-sm text-gray-600 mt-2">This article dives into the fascinating concept of quantum money—tokens that leverage the no-cloning theorem to prevent duplication. It explains how quantum cryptographic primitives may one day form the foundation for trustless, tamper-proof digital transactions.</p>
+    <p class="text-xs text-gray-500 mt-2">#quantum #money #cryptography</p>
+    <a href="https://medium.com/@quantumguru/quantum-money-fcfa26966abe" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+<article data-tags="quantum biology bacterium" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-bacterium.webp" alt="Quantum Bacterium" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">The Quantum Bacterium: Blurring the Line Between Physics and Life</h2>
+    <p class="text-sm text-gray-600 mt-2">Could biological systems exploit quantum mechanics? This speculative but insightful piece examines emerging theories around coherence in living organisms, and what it would mean if even bacteria could perform quantum-like processes.</p>
+    <p class="text-xs text-gray-500 mt-2">#quantum #biology #speculation</p>
+    <a href="https://medium.com/@quantumguru/the-quantum-bacterium-aa428818536d" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+<article data-tags="optical fiber loss quantum networking" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-losses.webp" alt="Optical Fiber Losses" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">Unraveling Optical Fiber Losses in Quantum Networks</h2>
+    <p class="text-sm text-gray-600 mt-2">Quantum networks rely on photons, and photons don’t always make it to their destination. This deep-dive explains the causes of optical losses, their impact on QKD performance, and engineering approaches to improve transmission efficiency over long distances.</p>
+    <p class="text-xs text-gray-500 mt-2">#quantum #fiber #losses #QKD</p>
+    <a href="https://medium.com/@quantumguru/unraveling-the-mysteries-of-light-optical-fiber-losses-in-quantum-networks-fc7779744420" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+<article data-tags="quantum computing architecture design" class="bg-white border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-designs.webp" alt="Quantum Computer Designs" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-700">7 Competing Designs for Universal Quantum Computers</h2>
+    <p class="text-sm text-gray-600 mt-2">Which quantum architecture will win? Superconducting circuits, trapped ions, neutral atoms, topological qubits, and more are battling to become the foundation of the future quantum computer. This article compares them all and outlines key trade-offs in scalability, coherence, and manufacturability.</p>
+    <p class="text-xs text-gray-500 mt-2">#quantum #architecture #comparison</p>
+    <a href="https://medium.com/swlh/7-designs-for-a-universal-quantum-computer-d918e556d149" class="text-sm text-blue-600 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+</div>
+</main>
 
     <footer class="bg-gray-100 text-xs text-gray-700 py-6 mt-12 border-t">
       <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
