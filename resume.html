@@ -1,180 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan Moreno – Resume</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
-<body class="bg-white text-gray-900 flex justify-center">
-  <div class="w-[66%] bg-white shadow-lg rounded-xl overflow-hidden">
-
-    <header class="bg-blue-50 py-12 mb-12 shadow-sm">
-      <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-        <div class="md:col-span-2">
-          <h1 class="text-4xl font-bold text-gray-800">Juan Moreno</h1>
-          <h2 class="text-base text-gray-600 mt-1 font-medium">Resume – Data Platform & Infrastructure Leader</h2>
-          <p class="text-sm text-gray-700 mt-4 max-w-xl">Seasoned technology leader with 24 years of experience in infrastructure, security, and distributed systems. At AWS, I’ve led teams building global-scale data platforms, secure workloads, and multi-region services. I mentor ICs and managers, influence product roadmaps, and drive execution across cross-functional groups. Passionate about transforming data pipelines into real-time growth accelerators. Experience spans across growth domains including identity, signup optimization, payments, partnerships, and pricing strategy.</p>
-          <a href="index.html" class="mt-6 inline-block bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded hover:bg-blue-700 transition">← Back to Portfolio</a>
-        </div>
-        <div class="flex justify-center md:justify-end">
-          <img src="juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-48 h-48 rounded-full shadow-lg border-4 border-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Moreno – Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-[#0b1120] text-white">
+    <!-- HERO -->
+    <section class="flex flex-col md:flex-row items-center justify-between p-12 max-w-7xl mx-auto">
+      <div class="max-w-xl">
+        <h1 class="text-4xl font-bold mb-4">Cloud & Distributed Systems Leadership</h1>
+        <p class="text-gray-300 mb-6">Specialized in distributed systems architecture, cloud-native solutions, and cross-functional leadership with expertise in AWS, real-time processing, and secure payment systems.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded font-semibold">Contact Me</a>
+          <a href="index.html" class="bg-white text-black px-4 py-2 rounded font-semibold">View Portfolio</a>
         </div>
       </div>
-    </header>
+      <div class="mt-8 md:mt-0 md:ml-12">
+        <img src="juan-photo.jpeg" class="w-52 h-52 rounded-xl object-cover shadow-lg border-4 border-white" alt="Juan Moreno" />
+      </div>
+    </section>
 
-    <main class="max-w-4xl mx-auto px-6 space-y-8">
+    <!-- CORE COMPETENCIES -->
+    <section class="bg-[#a5c8c6] py-12">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-black mb-8">Core Competencies</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold text-lg text-black">Cloud Architecture</h3>
+            <p class="text-black text-sm">Expertise in AWS cloud-native architecture, distributed systems, and data pipelines for enterprise-scale applications.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-black">Security & Compliance</h3>
+            <p class="text-black text-sm">Implementation of governance frameworks, security compliance, and quantum-secure communication systems.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-black">Data & Analytics</h3>
+            <p class="text-black text-sm">Real-time processing, streaming data pipelines, A/B testing platforms, and ML experimentation frameworks.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-black">Leadership</h3>
+            <p class="text-black text-sm">Cross-functional team building, global technical leadership, and strategic business alignment across continents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section>
-        <h2 class="text-xl font-semibold text-blue-700">Core Competencies</h2>
-        <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-          <li>Distributed Systems & Data Pipelines</li>
-          <li>Cloud-Native Architecture (AWS)</li>
-          <li>Streaming & Real-Time Processing</li>
-          <li>Cross-Functional Leadership</li>
-          <li>Governance & Security Compliance</li>
-          <li>Machine Learning & Experimentation</li>
-          <li>Plans & Pricing Strategy</li>
-          <li>Identity & Signup Optimization</li>
-          <li>Payments Infrastructure</li>
-          <li>Partnership Engineering & Enablement</li>
-          <li>Team Building & Mentorship</li>
-          <li>Product Strategy & Business Alignment</li>
-        </ul>
-      </section>
+    <!-- AWS EXPERIENCE -->
+    <section class="bg-[#a5c8c6] py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-[#0b1120] mb-12">AWS Leadership Experience</h2>
+    <div class="bg-[#0b1120] rounded-xl p-10 text-white relative overflow-hidden">
+      <!-- Vertical Line -->
+      <div class="absolute top-12 left-1/2 transform -translate-x-1/2 w-1 h-[calc(100%-6rem)] bg-white"></div>
 
-      <section>
-  <h2 class="text-xl font-semibold text-blue-700">Professional Experience</h2>
-  <div class="space-y-6">
-    <div>
-      <h3 class="font-bold">Principal Solutions Architect – Amazon Web Services</h3>
-      <p class="text-sm text-gray-600">Seattle, WA | Jan 2025 – Present</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Architected real-time analytics pipelines supporting A/B testing and ML across signup optimization and pricing flows.</li>
-        <li>Designed secure payment tokenization layers integrated with compliance data lakes.</li>
-        <li>Led engineering strategy for partnership telemetry ingestion and experimentation dashboards.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Principal Technology Evangelist – Amazon Web Services</h3>
-      <p class="text-sm text-gray-600">Austin, TX | Feb 2022 – Dec 2024</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Built secure data telemetry and governance services integrated with QKD and PQC systems.</li>
-        <li>Led architecture reviews across industries to support quantum-secure communication and distributed key systems.</li>
-        <li>Scaled technical programs and partner enablement across five continents, driving product demand and trust.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Sr. Manager, Solutions Architecture – Amazon Web Services</h3>
-      <p class="text-sm text-gray-600">Austin, TX | Sep 2020 – Jan 2022</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Launched A/B testing platforms and growth experiments in partnership with LATAM system integrators.</li>
-        <li>Drove distributed system design for secure and scalable modernization initiatives.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Manager, Enterprise Support – Amazon Web Services</h3>
-      <p class="text-sm text-gray-600">Dublin, Ireland & Austin, TX | Nov 2016 – Aug 2020</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Led a 24-person global support team focused on mission-critical, customer-facing applications.</li>
-        <li>Developed playbooks and automation for issue resolution, compliance visibility, and telemetry-driven operations.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Sr. Technical Account Manager (EMEA) – Amazon Web Services</h3>
-      <p class="text-sm text-gray-600">Dublin, Ireland | Aug 2013 – Oct 2016</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Provided deep technical guidance to global e-commerce and telecom customers.</li>
-        <li>Promoted adoption of secure, scalable architectures aligned with governance frameworks.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Service Delivery Manager & Tech Lead – IBM China</h3>
-      <p class="text-sm text-gray-600">Shenzhen, China | Apr 2011 – Jul 2013</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Led delivery for IBM Netherlands, managing 200+ servers across UNIX/Linux/Windows.</li>
-        <li>Acted as technical liaison with EMEA customers and internal global teams.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Infrastructure Specialist – IBM Ireland</h3>
-      <p class="text-sm text-gray-600">Dublin, Ireland | Jul 2008 – Mar 2011</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Managed O2 Ireland OSS and Core Networks across VMware, Solaris, and Red Hat deployments.</li>
-        <li>Led ESX cluster buildout, storage provisioning, OSS-RC and Sybase systems upgrade.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Senior OSS Engineer – Telefónica O2</h3>
-      <p class="text-sm text-gray-600">Dublin, Ireland | Dec 2007 – Jun 2008</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Monitored and enhanced 2G/3G networks using Netcool, Cramer, OSS-RC, GIS, Netviewer.</li>
-        <li>Deployed VMware ESXi and hosted Linux/UNIX guest systems.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Onsite Support Engineer – Agilent Technologies</h3>
-      <p class="text-sm text-gray-600">Dublin, Ireland | Feb 2007 – Nov 2007</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Delivered SS7 and QoS analytics platform support across HP-UX and SLES9 systems.</li>
-        <li>Led upgrades and enhancements to acceSS7 tooling for Tier 1 carriers.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Support & Integration Engineer – Ericsson</h3>
-      <p class="text-sm text-gray-600">Madrid, Spain | Oct 2005 – Jan 2007</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Integrated SASN platform for real-time event detection and billing in video/content networks.</li>
-        <li>Delivered custom training and troubleshooting for mobile operator deployments.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Support & Integration Engineer – NetSpira Networks</h3>
-      <p class="text-sm text-gray-600">Madrid, Spain | Mar 2002 – Sep 2005</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Led real-time protocol relay, MMS content routing, and ARP spoofing probes for carrier-grade data classification.</li>
-        <li>Provided integration and post-sales support for carriers in Spain, Portugal, Bulgaria, USA, and Singapore.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="font-bold">Technical Consultant – Capgemini & Ernst & Young</h3>
-      <p class="text-sm text-gray-600">Madrid, Spain | Jun 2000 – Feb 2002</p>
-      <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-        <li>Delivered consulting engagements using Lotus Domino, Siebel, TeamSite CMS, Oracle, and Java/HTML scripting.</li>
-        <li>Early projects in CRM, content management, and telecom data migration.</li>
-      </ul>
+      <div class="grid md:grid-cols-2 gap-y-16 gap-x-10 relative z-10">
+        <!-- Left side -->
+        <div class="relative">
+          <div class="flex items-center space-x-4">
+            <div class="w-6 h-6 bg-[#0b1120] border-2 border-yellow-400 text-yellow-400 font-bold rounded-full flex items-center justify-center">1</div>
+            <h3 class="font-semibold">Principal Solutions Architect (2025–Present)</h3>
+          </div>
+          <p class="text-sm text-gray-300 mt-2 ml-10">
+            Architected real-time analytics pipelines for A/B testing and ML across signup optimization and pricing flows. Designed secure payment tokenization layers with compliance data lakes.
+          </p>
+        </div>
+
+        <!-- Right side -->
+        <div class="relative">
+          <div class="flex items-center space-x-4">
+            <div class="w-6 h-6 bg-[#0b1120] border-2 border-pink-600 text-pink-600 font-bold rounded-full flex items-center justify-center">2</div>
+            <h3 class="font-semibold">Principal Technology Evangelist (2022–2024)</h3>
+          </div>
+          <p class="text-sm text-gray-300 mt-2 ml-10">
+            Built secure data telemetry and governance services with QKD and PQC systems. Led architecture reviews for quantum-secure communication and scaled technical programs across five continents.
+          </p>
+        </div>
+
+        <!-- Left side -->
+        <div class="relative">
+          <div class="flex items-center space-x-4">
+            <div class="w-6 h-6 bg-[#0b1120] border-2 border-rose-500 text-rose-500 font-bold rounded-full flex items-center justify-center">3</div>
+            <h3 class="font-semibold">Sr. Manager, Solutions Architecture (2020–2022)</h3>
+          </div>
+          <p class="text-sm text-gray-300 mt-2 ml-10">
+            Launched A/B testing platforms and growth experiments with LATAM system integrators. Drove distributed system design for secure modernization initiatives.
+          </p>
+        </div>
+
+        <!-- Right side -->
+        <div class="relative">
+          <div class="flex items-center space-x-4">
+            <div class="w-6 h-6 bg-[#0b1120] border-2 border-blue-500 text-blue-500 font-bold rounded-full flex items-center justify-center">4</div>
+            <h3 class="font-semibold">Manager, Enterprise Support (2016–2020)</h3>
+          </div>
+          <p class="text-sm text-gray-300 mt-2 ml-10">
+            Led a 24-person global support team for mission-critical applications. Developed playbooks and automation for issue resolution and telemetry-driven operations.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-      <section>
-        <h2 class="text-xl font-semibold text-blue-700">Technical Highlights</h2>
-        <ul class="list-disc list-inside sm:grid sm:grid-cols-2 gap-x-6">
-          <li>End-to-end architecture of distributed systems for regulated industries including telecom, finance, and e-commerce.</li>
-          <li>Built real-time ingestion pipelines for signup optimization, pricing A/B testing, and partnership telemetry.</li>
-          <li>Hands-on experience with OSS, monitoring, and billing platforms (Netcool, Sybase, OSS-RC, acceSS7).</li>
-          <li>Experience integrating QKD, PQC, and hybrid key infrastructure into enterprise data systems.</li>
-          <li>Virtualization leadership: VMware vSphere, SAN-backed clusters, Linux/Windows VM orchestration.</li>
-          <li>Global delivery: Team leadership across EMEA, APAC, and LATAM; customer-facing and internal coordination.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold text-blue-700">Hashtags</h2>
-        <p class="text-sm text-gray-600">#DistributedSystems #CloudSecurity #PlatformStrategy #StreamingData #ExperimentationPlatform #QuantumSecurity #OSSMonitoring #SignupOptimization #PricingA_BTests #PaymentsInfrastructure #TelecomCloud #EcommerceEngineering #PartnershipTelemetry #QKD #VMware #OSSIntegration #Mentorship #GlobalLeadership #DataEngineering #IdentityPlatforms</p>
-      </section>
-    </main>
-
-    <footer class="bg-gray-100 text-xs text-gray-700 py-6 mt-12 border-t">
-      <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
-        <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
+    <!-- EARLY CAREER -->
+    <section class="bg-[#0f172a] py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white mb-12">Early Career Highlights</h2>
+    <div class="grid md:grid-cols-4 gap-8 text-sm text-gray-200">
+      <div class="bg-[#1e293b] rounded-xl p-6">
+        <h3 class="font-semibold text-white mb-2">Sr. Technical Account Manager – AWS (2013–2016)</h3>
+        <p>Provided deep technical guidance to global e-commerce and telecom customers in Dublin, Ireland. Promoted adoption of secure, scalable architectures aligned with governance frameworks.</p>
       </div>
-    </footer>
+      <div class="bg-[#1e293b] rounded-xl p-6">
+        <h3 class="font-semibold text-white mb-2">Service Delivery Manager – IBM China (2011–2013)</h3>
+        <p>Led delivery for IBM Netherlands, managing 200+ servers across UNIX/Linux/Windows in Shenzhen, China. Acted as technical liaison with EMEA customers and internal global teams.</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-xl p-6">
+        <h3 class="font-semibold text-white mb-2">Infrastructure Specialist – IBM Ireland (2008–2011)</h3>
+        <p>Managed O2 Ireland OSS and Core Networks across VMware, Solaris, and Red Hat deployments. Led ESX cluster buildout and storage provisioning.</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-xl p-6">
+        <h3 class="font-semibold text-white mb-2">Telecom & Consulting Roles (2000–2008)</h3>
+        <p>Diverse experience across Telefónica O2, Agilent Technologies, Ericsson, NetSpira Networks, and Capgemini, focusing on telecom infrastructure, OSS, and integration.</p>
+      </div>
+    </div>
   </div>
+</section>
+
+    <!-- TECH EXPERTISE -->
+    <section class="bg-[#0b1120] py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white mb-10">Technical Expertise</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center">
+      <div class="bg-[#1e293b] rounded-lg p-6">
+        <h3 class="font-semibold text-white mb-2">Distributed Systems</h3>
+        <p class="text-gray-400">End-to-end architecture for regulated industries including telecom, finance, and e-commerce.</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-lg p-6">
+        <h3 class="font-semibold text-white mb-2">Real-time Pipelines</h3>
+        <p class="text-gray-400">Built ingestion pipelines for signup optimization, pricing A/B testing, and partnership telemetry.</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-lg p-6">
+        <h3 class="font-semibold text-white mb-2">Telecom & OSS</h3>
+        <p class="text-gray-400">Hands-on experience with OSS, monitoring, and billing platforms (Netcool, Sybase, OSS-RC, acceSS7).</p>
+      </div>
+      <div class="bg-[#1e293b] rounded-lg p-6">
+        <h3 class="font-semibold text-white mb-2">Security Infrastructure</h3>
+        <p class="text-gray-400">Experience integrating QKD, PQC, and hybrid key infrastructure into enterprise data systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>
