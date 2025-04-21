@@ -12,150 +12,115 @@
   </style>
 </head>
 <body class="bg-white text-gray-900">
-  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-10 mb-10">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6">
-      <img src="juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-32 h-32 rounded-full shadow-lg border-4 border-white" />
-      <div>
-        <h1 class="text-4xl font-bold">☁️ Juan Moreno – Cloud Projects Portfolio</h1>
-        <p class="mt-2 text-lg">Real-world cloud architecture projects with IaC, containers, GenAI, and quantum security.</p>
+  <!-- Intro Section -->
+  <header class="bg-blue-50 py-12 mb-12 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+      <div class="md:col-span-2">
+        <h1 class="text-4xl font-bold text-gray-800">Juan Moreno</h1>
+        <h2 class="text-lg text-gray-600 mt-1 font-medium">Cloud Infrastructure Leader</h2>
+        <p class="text-gray-700 mt-4 max-w-xl">With extensive experience at <strong>AWS</strong>, I specialize in architecting scalable, resilient cloud solutions. Passionate about distributed systems. I actively share my insights to empower tech communities.</p>
+        <a href="blog.html" class="mt-6 inline-block bg-blue-600 text-white text-sm font-semibold px-5 py-2 rounded hover:bg-blue-700 transition">View Blog</a>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img src="juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-32 h-32 rounded-full shadow-lg border-4 border-white">
       </div>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6">
-    <section class="mb-16">
-      <div class="bg-gray-50 border rounded-lg shadow p-5 col-span-full mb-6">
-        <h3 class="text-xl font-semibold text-blue-700">
-          <a href="blog.html" class="hover:underline">📝 Blog: Thoughts on Cloud, Infra & Quantum</a>
-        </h3>
-        <p class="text-sm text-gray-700 mt-2">
-          Architecture patterns, cost tips, and security deep dives from years of real-world work. Updated regularly.
-        </p>
-      </div>      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/eks.png" alt="eks-2048-autoscaling" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/eks-2048-autoscaling" target="_blank" class="hover:underline">
-                eks-2048-autoscaling
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Scalable Kubernetes deployment of the 2048 game with HPA and monitoring.<br>
-              <em>[EKS, HPA, CloudWatch]</em>
-            </p>
+  <!-- Projects Section -->
+  <main class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl font-semibold mb-6">My Projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Each project card wrapped in an anchor -->
+      <a href="https://github.com/juangedaan/cloud-security-governance-checks" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/governance.png" alt="cloud-security-governance-checks" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-blue-700">cloud-security-governance-</h3>
+          <p class="text-sm text-gray-600 mt-2">A cloud security governance au_tool.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/qkd.png" alt="hybrid-security-qkd-pqc" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/hybrid-security-qkd-pqc" target="_blank" class="hover:underline">
-                hybrid-security-qkd-pqc
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Simulated hybrid encryption using QKD + PQC with AES.<br>
-              <em>[Python, QKD, PQC]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/edge-ai-inference-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/edge.png" alt="edge-ai-inference-pipeline" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-green-700">edge-ai-inference-pipeline</h3>
+          <p class="text-sm text-gray-600 mt-2">Cloud-based pipeline for edge AI.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">ML</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/pipeline.png" alt="serverless-data-pipeline" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/serverless-data-pipeline" target="_blank" class="hover:underline">
-                serverless-data-pipeline
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Real-time data pipeline using Kinesis, Lambda, and DynamoDB.<br>
-              <em>[Terraform, Serverless]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/genai-code-review-assistant" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/genai.png" alt="genai-code-review-assistant" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-red-700">genai-code-review-assistant</h3>
+          <p class="text-sm text-gray-600 mt-2">Code review agent using LLMs.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">LangChain</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/governance.png" alt="cloud-security-governance-checks" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/cloud-security-governance-checks" target="_blank" class="hover:underline">
-                cloud-security-governance-checks
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              CDK-based AWS Config rules for multi-account security governance.<br>
-              <em>[CDK, AWS Config]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/hybrid-security-dkd-pqe" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/qkd.png" alt="hybrid-security-dkd-pqe" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-pink-700">hybrid-security-dkd-pqe</h3>
+          <p class="text-sm text-gray-600 mt-2">Simulated hybrid encryption using QKD – PQC with AES.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">QKD_PQC</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/site.png" alt="multi-region-website-infra" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/multi-region-website-infra" target="_blank" class="hover:underline">
-                multi-region-website-infra
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Fault-tolerant static site with S3, CloudFront, and Route 53 failover.<br>
-              <em>[Terraform, S3, Route 53]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/iac-patterns-with-cdk" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/cdk.png" alt="iac-patterns-with-cdk" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-green-700">iac-patterns-with-cdk</h3>
+          <p class="text-sm text-gray-600 mt-2">Reusable AWS CDK stacks for VPC, ECS, IAM, and secrets management.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">CDK</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">TypeScript</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/genai.png" alt="genai-code-review-assistant" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/genai-code-review-assistant" target="_blank" class="hover:underline">
-                genai-code-review-assistant
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              GitHub Action bot using GPT to review pull requests.<br>
-              <em>[GitHub Actions, OpenAI]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/multi-region-website,depiora" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/site.png" alt="multi-region-website,depiora" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-yellow-700">multi-region-website,depiora</h3>
+          <p class="text-sm text-gray-600 mt-2">Multi-region trebsites.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">S3</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Route 53</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/cdk.png" alt="iac-patterns-with-cdk" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/iac-patterns-with-cdk" target="_blank" class="hover:underline">
-                iac-patterns-with-cdk
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Reusable AWS CDK stacks for VPC, ECS, IAM, and secrets management.<br>
-              <em>[CDK, TypeScript]</em>
-            </p>
+      </a>
+
+      <a href="https://github.com/juangedaan/serverless-data-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition">
+        <img src="images/pipeline.png" alt="serverless-data-pipeline" class="w-full h-32 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold text-indigo-700">serverless-data-pipeline</h3>
+          <p class="text-sm text-gray-600 mt-2">Serverless pipeline.</p>
+          <div class="flex gap-2 mt-3 text-xs">
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
+            <span class="bg-gray-100 px-2 py-1 rounded font-medium">Serverless</span>
           </div>
         </div>
-      
-        <div class="bg-white border rounded-lg shadow overflow-hidden">
-          <img src="images/edge.png" alt="edge-ai-inference-pipeline" class="w-full h-32 object-cover">
-          <div class="p-5">
-            <h3 class="text-xl font-semibold text-blue-700">
-              <a href="https://github.com/juangedaan/edge-ai-inference-pipeline" target="_blank" class="hover:underline">
-                edge-ai-inference-pipeline
-              </a>
-            </h3>
-            <p class="text-sm text-gray-600 mt-2">
-              Simulated ML inference pipeline for edge devices using Docker and Greengrass architecture.<br>
-              <em>[Docker, Python, Greengrass]</em>
-            </p>
-          </div>
-        </div>
-      </div>      
-    </section>
+      </a>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gray-100 text-sm text-gray-700 py-6 mt-12 border-t">
     <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
       <p>📄 View Resume in:</p>
@@ -168,6 +133,5 @@
       <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
     </div>
   </footer>
-  
 </body>
 </html>
