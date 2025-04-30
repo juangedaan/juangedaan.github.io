@@ -1,166 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juan Moreno – Cloud Projects Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" href="favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
   <style>
     body { font-family: 'Inter', sans-serif; }
-    .square { aspect-ratio: 1 / 1; }
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+    .project-card img {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      color: white;
+      padding: 1rem;
+    }
   </style>
 </head>
-<body class="bg-white text-gray-900 flex justify-center">
-  <div class="w-[66%] bg-white shadow-lg rounded-xl overflow-hidden">
-
-    <header class="bg-blue-50 py-12 mb-12 shadow-sm">
-      <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-        <div class="md:col-span-2">
-          <h1 class="text-4xl font-bold text-gray-800">Juan Moreno</h1>
-          <h2 class="text-base text-gray-600 mt-1 font-medium">Cloud Infrastructure Architect</h2>
-          <p class="text-sm text-gray-700 mt-4 max-w-xl">With extensive experience at <strong>AWS</strong>, I specialize in architecting scalable, resilient cloud solutions. Passionate about distributed systems. I actively share my insights to empower tech communities.</p>
-          <a href="blog.html" class="mt-6 inline-block bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded hover:bg-blue-700 transition">View Blog</a>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <div class="w-full max-w-6xl mx-auto px-6 py-10">
+    <header class="mb-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h1 class="text-4xl font-bold">Juan Moreno</h1>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Cloud Infrastructure Architect | Distributed Systems | Quantum Security</p>
         </div>
-        <div class="flex justify-center md:justify-end">
-          <img src="images/juan-photo.jpeg" alt="Juan Moreno profile photo" class="w-48 h-48 rounded-full shadow-lg border-4 border-white">
+        <div class="flex items-center gap-4">
+          <a href="resume.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇬🇧 English</a>
+          <a href="resume-zh.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇨🇳 中文</a>
+          <a href="resume-es.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇪🇸 Español</a>
+          <button onclick="toggleDarkMode()" class="ml-4 text-sm border px-2 py-1 rounded">🌓 Toggle</button>
         </div>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6">
-      <h2 class="text-xl font-semibold mb-6 text-center">My Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-
-        <a href="https://github.com/juangedaan/e-commerce-backend" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/ecommerce.png" alt="social-commerce-backend" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">social-commerce-backend</h3>
-            <p class="text-xs text-gray-600 mt-1">Scalable social commerce backend with FastAPI, PostgreSQL, and ML-powered recommendations.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">FastAPI</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">PostgreSQL</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Machine Learning</span>
-            </div>
+    <main>
+      <h2 class="text-2xl font-semibold mb-6 text-center">Selected Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="project-card shadow-md">
+          <img src="images/ecommerce.png" alt="E-commerce backend" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Scalable backend for a social commerce platform</h3>
+            <p class="text-xs">FastAPI · PostgreSQL · ML Recommendations</p>
           </div>
-        </a>      
+        </div>
 
-        <a href="https://github.com/juangedaan/event-driven-logistics" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/logistics.png" alt="event-driven-logistics" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">event-driven-logistics</h3>
-            <p class="text-xs text-gray-600 mt-1">Real-time logistics tracking system built with Kafka, Python, DynamoDB, and Flask. Features event-driven architecture, merchant dashboard, and scalable multi-region design.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Kafka</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">DynamoDB</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Flask</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/event-driven-logistics">
+            <img src="images/logistics.png" alt="Event-driven logistics" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Real-time logistics tracking with event-driven architecture</h3>
+              <p class="text-xs">Kafka · Python · Flask · DynamoDB</p>
             </div>
-          </div>
-        </a>        
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/cloud-security-governance-checks" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/governance.png" alt="cloud-security-governance-checks" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">cloud-security-governance-checks</h3>
-            <p class="text-xs text-gray-600 mt-1">CDK-based AWS Config rules for multi-account security governance.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/genai-code-review-assistant">
+            <img src="images/genai.png" alt="Code review assistant" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">AI assistant for automated code review on GitHub</h3>
+              <p class="text-xs">Python · LangChain · GitHub Actions</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/edge-ai-inference-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/edge.png" alt="edge-ai-inference-pipeline" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">edge-ai-inference-pipeline</h3>
-            <p class="text-xs text-gray-600 mt-1">Cloud-based ML inference pipeline for edge devices using Docker and Greengrass.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">AWS</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">ML</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/cloud-security-governance-checks">
+            <img src="images/governance.png" alt="Cloud security governance" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Security governance automation with AWS Config</h3>
+              <p class="text-xs">Python · AWS · CDK</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/genai-code-review-assistant" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/genai.png" alt="genai-code-review-assistant" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">genai-code-review-assistant</h3>
-            <p class="text-xs text-gray-600 mt-1">GitHub Action bot using GPT to review pull requests.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">LangChain</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/edge-ai-inference-pipeline">
+            <img src="images/edge.png" alt="Edge ML pipeline" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Edge AI inference pipeline for IoT devices</h3>
+              <p class="text-xs">Python · AWS · Greengrass</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/hybrid-security-dkd-pqe" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/qkd.png" alt="hybrid-security-dkd-pqe" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">hybrid-security-dkd-pqe</h3>
-            <p class="text-xs text-gray-600 mt-1">Simulated hybrid encryption using QKD + PQC with AES.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Python</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">QKD_PQC</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/hybrid-security-dkd-pqe">
+            <img src="images/qkd.png" alt="Hybrid encryption demo" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Hybrid encryption using QKD and PQC</h3>
+              <p class="text-xs">Python · QKD · PQC · AES</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/iac-patterns-with-cdk" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/cdk.png" alt="iac-patterns-with-cdk" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">iac-patterns-with-cdk</h3>
-            <p class="text-xs text-gray-600 mt-1">Reusable AWS CDK stacks for VPC, ECS, IAM, and secrets management.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">CDK</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">TypeScript</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/iac-patterns-with-cdk">
+            <img src="images/cdk.png" alt="IaC patterns with CDK" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Reusable infrastructure patterns with AWS CDK</h3>
+              <p class="text-xs">TypeScript · CDK · VPC · ECS</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/multi-region-website,depiora" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/site.png" alt="multi-region-website,depiora" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">multi-region-website,depiora</h3>
-            <p class="text-xs text-gray-600 mt-1">Fault-tolerant static site with S3, CloudFront, and Route 53 failover.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">S3</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Route 53</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/multi-region-website,depiora">
+            <img src="images/site.png" alt="Multi-region website" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Multi-region static website with failover support</h3>
+              <p class="text-xs">S3 · CloudFront · Route 53 · Terraform</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
 
-        <a href="https://github.com/juangedaan/serverless-data-pipeline" class="bg-white border rounded-lg shadow overflow-hidden hover:shadow-md transition square">
-          <img src="images/pipeline.png" alt="serverless-data-pipeline" class="w-full h-1/2 object-cover">
-          <div class="p-4 h-1/2 flex flex-col justify-between">
-            <h3 class="text-base font-semibold text-blue-700">serverless-data-pipeline</h3>
-            <p class="text-xs text-gray-600 mt-1">Real-time data pipeline using Kinesis, Lambda, and DynamoDB.</p>
-            <div class="flex gap-2 mt-2 text-xs">
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Terraform</span>
-              <span class="bg-gray-100 px-2 py-1 rounded font-medium">Serverless</span>
+        <div class="project-card shadow-md">
+          <a href="https://github.com/juangedaan/serverless-data-pipeline">
+            <img src="images/pipeline.png" alt="Serverless data pipeline" class="w-full h-48 object-cover">
+            <div class="project-overlay">
+              <h3 class="text-lg font-semibold">Real-time serverless data pipeline on AWS</h3>
+              <p class="text-xs">Kinesis · Lambda · DynamoDB · Terraform</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+
       </div>
     </main>
-
-    <footer class="bg-gray-100 text-xs text-gray-700 py-6 mt-12 border-t">
-      <div class="max-w-4xl mx-auto px-6 text-center space-y-3">
-        <p>📄 View Resume in:</p>
-        <div class="space-x-4">
-          <a href="resume.html" class="text-blue-600 hover:underline">🇬🇧 English</a>
-          <a href="resume-zh.html" class="text-blue-600 hover:underline">🇨🇳 中文</a>
-          <a href="resume-es.html" class="text-blue-600 hover:underline">🇪🇸 Español</a>
-        </div>
-        <hr class="my-4 border-gray-300 max-w-xs mx-auto">
-        <p>© Juan Moreno · <a href="mailto:juan.morenob@gmail.com" class="text-blue-600 hover:underline">juan.morenob@gmail.com</a></p>
-      </div>
-    </footer>
-
   </div>
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+  </script>
 </body>
 </html>
