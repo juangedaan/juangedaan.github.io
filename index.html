@@ -6,15 +6,8 @@
   <title>Juan Moreno – Cloud Projects Portfolio</title>
   <link rel="icon" href="favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  </script>
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Roboto', sans-serif; }
     .project-card {
       position: relative;
       overflow: hidden;
@@ -36,25 +29,26 @@
       padding: 1rem;
     }
   </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-  <div class="w-full max-w-6xl mx-auto px-6 py-10">
-    <header class="mb-10">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <div>
-          <h1 class="text-4xl font-bold">Juan Moreno</h1>
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Cloud Infrastructure Architect | Distributed Systems | Quantum Security</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <a href="resume.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇬🇧 English</a>
-          <a href="resume-zh.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇨🇳 中文</a>
-          <a href="resume-es.html" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-transparent hover:border-blue-600 dark:hover:border-blue-400">🇪🇸 Español</a>
-          <button onclick="toggleDarkMode()" class="ml-4 text-sm border px-2 py-1 rounded">🌓 Toggle</button>
+  <div class="w-full max-w-6xl mx-auto px-6">
+    <header class="bg-gray-800 py-16 text-gray-300 mb-16 rounded-xl">
+      <div class="text-center space-y-4">
+        <h1 class="text-5xl font-bold text-white">Juan Moreno</h1>
+        <p class="text-lg max-w-3xl mx-auto">I'm a cloud infrastructure architect with a focus on distributed systems, automation, and post-quantum security. With over two decades leading global teams and shaping technical strategy across infrastructure, security, and cloud architecture, I build scalable platforms that bridge innovation and reliability. I thrive at the edge of complexity—where critical systems meet bold ideas.</p>
+        <div class="flex justify-center mt-6">
+          <a href="blog.html" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">📝 Read my blog</a>
         </div>
       </div>
     </header>
 
     <main>
+            <div class="text-center mb-8 text-sm text-gray-700 dark:text-gray-300">
+        <span class="mr-3">📄 <a href="resume.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">Resume 🇬🇧</a></span>
+        <span class="mr-3">📄 <a href="resume-zh.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">简历 🇨🇳</a></span>
+        <span>📄 <a href="resume-es.html" class="underline hover:text-blue-600 dark:hover:text-blue-400">CV 🇪🇸</a></span>
+      </div>
       <h2 class="text-2xl font-semibold mb-6 text-center">Selected Projects</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="project-card shadow-md">
@@ -64,95 +58,78 @@
             <p class="text-xs">FastAPI · PostgreSQL · ML Recommendations</p>
           </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/event-driven-logistics">
-            <img src="images/logistics.png" alt="Event-driven logistics" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Real-time logistics tracking with event-driven architecture</h3>
-              <p class="text-xs">Kafka · Python · Flask · DynamoDB</p>
-            </div>
-          </a>
+          <img src="images/logistics.png" alt="Event-driven logistics" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Real-time logistics tracking with event-driven architecture</h3>
+            <p class="text-xs">Kafka · Python · Flask · DynamoDB</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/genai-code-review-assistant">
-            <img src="images/genai.png" alt="Code review assistant" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">AI assistant for automated code review on GitHub</h3>
-              <p class="text-xs">Python · LangChain · GitHub Actions</p>
-            </div>
-          </a>
+          <img src="images/genai.png" alt="Code review assistant" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">AI assistant for automated code review on GitHub</h3>
+            <p class="text-xs">Python · LangChain · GitHub Actions</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/cloud-security-governance-checks">
-            <img src="images/governance.png" alt="Cloud security governance" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Security governance automation with AWS Config</h3>
-              <p class="text-xs">Python · AWS · CDK</p>
-            </div>
-          </a>
+          <img src="images/governance.png" alt="Cloud security governance" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Security governance automation with AWS Config</h3>
+            <p class="text-xs">Python · AWS · CDK</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/edge-ai-inference-pipeline">
-            <img src="images/edge.png" alt="Edge ML pipeline" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Edge AI inference pipeline for IoT devices</h3>
-              <p class="text-xs">Python · AWS · Greengrass</p>
-            </div>
-          </a>
+          <img src="images/edge.png" alt="Edge ML pipeline" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Edge AI inference pipeline for IoT devices</h3>
+            <p class="text-xs">Python · AWS · Greengrass</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/hybrid-security-dkd-pqe">
-            <img src="images/qkd.png" alt="Hybrid encryption demo" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Hybrid encryption using QKD and PQC</h3>
-              <p class="text-xs">Python · QKD · PQC · AES</p>
-            </div>
-          </a>
+          <img src="images/qkd.png" alt="Hybrid encryption demo" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Hybrid encryption using QKD and PQC</h3>
+            <p class="text-xs">Python · QKD · PQC · AES</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/iac-patterns-with-cdk">
-            <img src="images/cdk.png" alt="IaC patterns with CDK" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Reusable infrastructure patterns with AWS CDK</h3>
-              <p class="text-xs">TypeScript · CDK · VPC · ECS</p>
-            </div>
-          </a>
+          <img src="images/cdk.png" alt="IaC patterns with CDK" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Reusable infrastructure patterns with AWS CDK</h3>
+            <p class="text-xs">TypeScript · CDK · VPC · ECS</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/multi-region-website,depiora">
-            <img src="images/site.png" alt="Multi-region website" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Multi-region static website with failover support</h3>
-              <p class="text-xs">S3 · CloudFront · Route 53 · Terraform</p>
-            </div>
-          </a>
+          <img src="images/site.png" alt="Multi-region website" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Multi-region static website with failover support</h3>
+            <p class="text-xs">S3 · CloudFront · Route 53 · Terraform</p>
+          </div>
         </div>
-
         <div class="project-card shadow-md">
-          <a href="https://github.com/juangedaan/serverless-data-pipeline">
-            <img src="images/pipeline.png" alt="Serverless data pipeline" class="w-full h-48 object-cover">
-            <div class="project-overlay">
-              <h3 class="text-lg font-semibold">Real-time serverless data pipeline on AWS</h3>
-              <p class="text-xs">Kinesis · Lambda · DynamoDB · Terraform</p>
-            </div>
-          </a>
+          <img src="images/pipeline.png" alt="Serverless data pipeline" class="w-full h-48 object-cover">
+          <div class="project-overlay">
+            <h3 class="text-lg font-semibold">Real-time serverless data pipeline on AWS</h3>
+            <p class="text-xs">Kinesis · Lambda · DynamoDB · Terraform</p>
+          </div>
         </div>
-
       </div>
+          
     </main>
+
+    <footer class="text-sm text-gray-500 dark:text-gray-400 text-center mt-16">
+      <p class="mb-1">© Juan Moreno</p>
+      <p class="mb-1">📧 <a href="mailto:juan.morenob@gmail.com" class="underline hover:text-blue-600 dark:hover:text-blue-400">juan.morenob@gmail.com</a></p>
+      <p class="mb-1">📱 (+1) 512 420 3588</p>
+      <p>🔗 <a href="https://linkedin.com/in/juan-aws" class="underline hover:text-blue-600 dark:hover:text-blue-400">linkedin.com/in/juan-aws</a></p>
+    </footer>
+
+    <section class="bg-gray-800 text-gray-300 py-16 mt-16 rounded-xl text-center">
+      <p class="mb-2">📧 <a href="mailto:juan.morenob@gmail.com" class="underline hover:text-blue-400">juan.morenob@gmail.com</a></p>
+      <p class="mb-2">📱 (+1) 512 420 3588</p>
+      <p>🔗 <a href="https://linkedin.com/in/juan-aws" class="underline hover:text-blue-400">linkedin.com/in/juan-aws</a></p>
+    </section>
   </div>
-  <script>
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    }
-  </script>
 </body>
 </html>
