@@ -12,63 +12,65 @@
     .square { aspect-ratio: 1 / 1; }
   </style>
   <script>
-    let currentPage = 1;
-    const articlesPerPage = 6;
-    const articles = document.querySelectorAll('#blogContainer article');
-    const totalPages = Math.ceil(articles.length / articlesPerPage);
-    const pagination = document.querySelector('.flex.justify-center.mt-8');
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentPage = 1;
+      const articlesPerPage = 6;
+      const articles = document.querySelectorAll('#blogContainer article');
+      const totalPages = Math.ceil(articles.length / articlesPerPage);
+      const pagination = document.getElementById('pagination');
 
-    function showPage(page) {
-      articles.forEach((article, index) => {
-        if (index >= (page - 1) * articlesPerPage && index < page * articlesPerPage) {
-          article.style.display = '';
+      function showPage(page) {
+        articles.forEach((article, index) => {
+          if (index >= (page - 1) * articlesPerPage && index < page * articlesPerPage) {
+            article.style.display = '';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+        document.getElementById('pageIndicator').textContent = `Page ${page} of ${totalPages}`;
+        document.getElementById('prevPage').disabled = page === 1;
+        document.getElementById('nextPage').disabled = page === totalPages;
+      }
+
+      function filterPosts() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const posts = document.querySelectorAll('[data-tags]');
+        posts.forEach(post => {
+          const tags = post.dataset.tags.toLowerCase();
+          const text = post.innerText.toLowerCase();
+          post.style.display = (tags.includes(query) || text.includes(query)) ? '' : 'none';
+        });
+        if (query) {
+          pagination.style.display = 'none';
         } else {
-          article.style.display = 'none';
+          pagination.style.display = 'flex';
+          currentPage = 1;
+          showPage(currentPage);
+        }
+      }
+
+      function filterByTag(tag) {
+        document.getElementById('searchInput').value = tag;
+        filterPosts();
+      }
+
+      document.getElementById('prevPage').addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
         }
       });
-      document.getElementById('pageIndicator').textContent = `Page ${page} of ${totalPages}`;
-      document.getElementById('prevPage').disabled = page === 1;
-      document.getElementById('nextPage').disabled = page === totalPages;
-    }
 
-    function filterPosts() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const posts = document.querySelectorAll('[data-tags]');
-      posts.forEach(post => {
-        const tags = post.dataset.tags.toLowerCase();
-        const text = post.innerText.toLowerCase();
-        post.style.display = (tags.includes(query) || text.includes(query)) ? '' : 'none';
+      document.getElementById('nextPage').addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+        }
       });
-      if (query) {
-        pagination.style.display = 'none';
-      } else {
-        pagination.style.display = 'flex';
-        currentPage = 1;
-        showPage(currentPage);
-      }
-    }
 
-    function filterByTag(tag) {
-      document.getElementById('searchInput').value = tag;
-      filterPosts();
-    }
-
-    document.getElementById('prevPage').addEventListener('click', () => {
-      if (currentPage > 1) {
-        currentPage--;
-        showPage(currentPage);
-      }
+      // Initial load
+      showPage(currentPage);
     });
-
-    document.getElementById('nextPage').addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        showPage(currentPage);
-      }
-    });
-
-    // Initial load
-    showPage(currentPage);
   </script>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
@@ -204,7 +206,7 @@
 
 </div>
 
-      <div class="flex justify-center mt-8 space-x-4">
+      <div id="pagination" class="flex justify-center mt-8 space-x-4">
         <button id="prevPage" class="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 disabled:opacity-50" disabled>← Previous</button>
         <span id="pageIndicator" class="px-4 py-2 text-gray-300">Page 1 of 2</span>
         <button id="nextPage" class="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600">Next →</button>
