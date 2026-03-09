@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../serverless-data-pipeline"
+		},
+		{
+			"path": "../multi-region-website-infra"
+		},
+		{
+			"path": "../iac-patterns-with-cdk"
+		},
+		{
+			"path": "../hybrid-security-qkd-pqc"
+		},
+		{
+			"path": "../edge-ai-inference-pipeline"
+		},
+		{
+			"path": "../cloud-security-governance-checks"
+		},
+		{
+			"path": "../genai-code-review-assistant"
+		},
+		{
+			"path": "../event-driven-logistics"
+		},
+		{
+			"path": "../e-commerce-backend"
+		}
+	],
+	"settings": {}
+}
