@@ -12,6 +12,25 @@
     .square { aspect-ratio: 1 / 1; }
   </style>
   <script>
+    let currentPage = 1;
+    const articlesPerPage = 6;
+    const articles = document.querySelectorAll('#blogContainer article');
+    const totalPages = Math.ceil(articles.length / articlesPerPage);
+    const pagination = document.querySelector('.flex.justify-center.mt-8');
+
+    function showPage(page) {
+      articles.forEach((article, index) => {
+        if (index >= (page - 1) * articlesPerPage && index < page * articlesPerPage) {
+          article.style.display = '';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+      document.getElementById('pageIndicator').textContent = `Page ${page} of ${totalPages}`;
+      document.getElementById('prevPage').disabled = page === 1;
+      document.getElementById('nextPage').disabled = page === totalPages;
+    }
+
     function filterPosts() {
       const query = document.getElementById('searchInput').value.toLowerCase();
       const posts = document.querySelectorAll('[data-tags]');
@@ -20,11 +39,36 @@
         const text = post.innerText.toLowerCase();
         post.style.display = (tags.includes(query) || text.includes(query)) ? '' : 'none';
       });
+      if (query) {
+        pagination.style.display = 'none';
+      } else {
+        pagination.style.display = 'flex';
+        currentPage = 1;
+        showPage(currentPage);
+      }
     }
+
     function filterByTag(tag) {
       document.getElementById('searchInput').value = tag;
       filterPosts();
     }
+
+    document.getElementById('prevPage').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    });
+
+    // Initial load
+    showPage(currentPage);
   </script>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
@@ -68,26 +112,6 @@
           </div>
         </article>
 
-        <article data-tags="braket cost optimization quantum cloud" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
-          <img src="images/blog-cost.jpg" alt="Managing Braket Experiment Costs" class="w-full h-48 object-cover">
-          <div class="p-4 flex flex-col justify-between h-full">
-            <h2 class="text-lg font-semibold text-blue-300">Cost Control Strategies for Quantum Computing with Amazon Braket</h2>
-            <p class="text-sm text-gray-300 mt-2">Quantum computing on AWS brings unprecedented flexibility—but also complexity in billing. Learn how to understand and manage the cost of experiments using tools like billing alerts, consolidated usage dashboards, and best practices for simulator and QPU usage that align with budget-conscious research and development goals.</p>
-            <p class="text-xs text-gray-400 mt-2">#braket #cost #optimization</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
-        <article data-tags="aws braket local dev environment" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
-          <img src="images/blog-setup.png" alt="Local Setup for Braket" class="w-full h-48 object-cover">
-          <div class="p-4 flex flex-col justify-between h-full">
-            <h2 class="text-lg font-semibold text-blue-300">Setting Up a Local Quantum Development Environment</h2>
-            <p class="text-sm text-gray-300 mt-2">For researchers and developers working on quantum applications, having a reproducible local setup is critical. This post outlines a step-by-step guide to configuring Amazon Braket SDK locally with Python, Docker, and Jupyter, enabling simulation workflows before moving to the cloud for scaled runs.</p>
-            <p class="text-xs text-gray-400 mt-2">#braket #development #local</p>
-            <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-your-local-development-environment-in-amazon-braket/" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
-          </div>
-        </article>
-
         <article data-tags="china quantum race geopolitics" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
           <img src="images/blog-china.webp" alt="China Quantum Race" class="w-full h-48 object-cover">
           <div class="p-4 flex flex-col justify-between h-full">
@@ -97,7 +121,7 @@
             <a href="https://medium.com/@quantumguru/china-gets-ahead-in-the-quantum-race-c1bde0864379" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
           </div>
         </article>
-        <!-- Blog entries will be generated dynamically or inserted below -->
+
       <article data-tags="qkd pqc metro deployment hybrid security" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
   <img src="images/blog-nqsn.jpg" alt="Quantum Secured Network" class="w-full h-48 object-cover">
   <div class="p-4 flex flex-col justify-between h-full">
@@ -128,6 +152,36 @@
   </div>
 </article>
 
+<article data-tags="quantum computing architecture design" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+  <img src="images/blog-designs.webp" alt="Quantum Computer Designs" class="w-full h-48 object-cover">
+  <div class="p-4 flex flex-col justify-between h-full">
+    <h2 class="text-lg font-semibold text-blue-300">7 Competing Designs for Universal Quantum Computers</h2>
+    <p class="text-sm text-gray-300 mt-2">Which quantum architecture will win? Superconducting circuits, trapped ions, neutral atoms, topological qubits, and more are battling to become the foundation of the future quantum computer. This article compares them all and outlines key trade-offs in scalability, coherence, and manufacturability.</p>
+    <p class="text-xs text-gray-400 mt-2">#quantum #architecture #comparison</p>
+    <a href="https://medium.com/swlh/7-designs-for-a-universal-quantum-computer-d918e556d149" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
+  </div>
+</article>
+
+        <article data-tags="braket cost optimization quantum cloud" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-cost.jpg" alt="Managing Braket Experiment Costs" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-300">Cost Control Strategies for Quantum Computing with Amazon Braket</h2>
+            <p class="text-sm text-gray-300 mt-2">Quantum computing on AWS brings unprecedented flexibility—but also complexity in billing. Learn how to understand and manage the cost of experiments using tools like billing alerts, consolidated usage dashboards, and best practices for simulator and QPU usage that align with budget-conscious research and development goals.</p>
+            <p class="text-xs text-gray-400 mt-2">#braket #cost #optimization</p>
+            <a href="https://aws.amazon.com/blogs/quantum-computing/managing-the-cost-of-your-experiments-in-amazon-braket/" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article data-tags="aws braket local dev environment" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+          <img src="images/blog-setup.png" alt="Local Setup for Braket" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col justify-between h-full">
+            <h2 class="text-lg font-semibold text-blue-300">Setting Up a Local Quantum Development Environment</h2>
+            <p class="text-sm text-gray-300 mt-2">For researchers and developers working on quantum applications, having a reproducible local setup is critical. This post outlines a step-by-step guide to configuring Amazon Braket SDK locally with Python, Docker, and Jupyter, enabling simulation workflows before moving to the cloud for scaled runs.</p>
+            <p class="text-xs text-gray-400 mt-2">#braket #development #local</p>
+            <a href="https://aws.amazon.com/blogs/quantum-computing/setting-up-your-local-development-environment-in-amazon-braket/" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
+          </div>
+        </article>
+
 <article data-tags="quantum biology bacterium" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
   <img src="images/blog-bacterium.webp" alt="Quantum Bacterium" class="w-full h-48 object-cover">
   <div class="p-4 flex flex-col justify-between h-full">
@@ -148,18 +202,13 @@
   </div>
 </article>
 
-<article data-tags="quantum computing architecture design" class="bg-gray-800 border-gray-700 rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
-  <img src="images/blog-designs.webp" alt="Quantum Computer Designs" class="w-full h-48 object-cover">
-  <div class="p-4 flex flex-col justify-between h-full">
-    <h2 class="text-lg font-semibold text-blue-300">7 Competing Designs for Universal Quantum Computers</h2>
-    <p class="text-sm text-gray-300 mt-2">Which quantum architecture will win? Superconducting circuits, trapped ions, neutral atoms, topological qubits, and more are battling to become the foundation of the future quantum computer. This article compares them all and outlines key trade-offs in scalability, coherence, and manufacturability.</p>
-    <p class="text-xs text-gray-400 mt-2">#quantum #architecture #comparison</p>
-    <a href="https://medium.com/swlh/7-designs-for-a-universal-quantum-computer-d918e556d149" class="text-sm text-blue-400 mt-2 hover:underline">Read More →</a>
-  </div>
-</article>
-
 </div>
-</main>
+
+      <div class="flex justify-center mt-8 space-x-4">
+        <button id="prevPage" class="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 disabled:opacity-50" disabled>← Previous</button>
+        <span id="pageIndicator" class="px-4 py-2 text-gray-300">Page 1 of 2</span>
+        <button id="nextPage" class="px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600">Next →</button>
+      </div>
 
     <footer class="bg-gray-800 text-gray-300 py-12 mt-16 rounded-xl">
       <div class="text-center space-y-3">
